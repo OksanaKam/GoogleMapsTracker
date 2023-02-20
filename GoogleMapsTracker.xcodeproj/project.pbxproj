@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		45E8212CC39FA4502074C620 /* Pods_GoogleMapsTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABE932157F51645F14ACC20 /* Pods_GoogleMapsTrackerTests.framework */; };
 		82CD7ECAA26254929915CF06 /* Pods_GoogleMapsTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089258927828CD48FDC85668 /* Pods_GoogleMapsTracker.framework */; };
+		B94AF623299E703C00C6CFB5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AF622299E703C00C6CFB5 /* Coordinate.swift */; };
+		B94AF626299E747E00C6CFB5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B94AF625299E747E00C6CFB5 /* Realm */; };
+		B94AF628299E747E00C6CFB5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B94AF627299E747E00C6CFB5 /* RealmSwift */; };
+		B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AF62A299E86DF00C6CFB5 /* RealmService.swift */; };
 		B9DA9A1D299B83F400A41C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */; };
 		B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */; };
 		B9DA9A21299B83F400A41C31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A20299B83F400A41C31 /* ViewController.swift */; };
@@ -47,6 +51,8 @@
 		4A4435A4E3FD86026C21ED95 /* Pods-GoogleMapsTracker-GoogleMapsTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTracker-GoogleMapsTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTracker-GoogleMapsTrackerUITests/Pods-GoogleMapsTracker-GoogleMapsTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		990EC9BCE01D14730F63FA62 /* Pods-GoogleMapsTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTrackerTests/Pods-GoogleMapsTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C9C892EE2FDF3768A4F152D /* Pods-GoogleMapsTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTracker.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTracker/Pods-GoogleMapsTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		B94AF622299E703C00C6CFB5 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		B94AF62A299E86DF00C6CFB5 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		B9DA9A19299B83F400A41C31 /* GoogleMapsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94AF628299E747E00C6CFB5 /* RealmSwift in Frameworks */,
+				B94AF626299E747E00C6CFB5 /* Realm in Frameworks */,
 				82CD7ECAA26254929915CF06 /* Pods_GoogleMapsTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,9 +109,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B94AF629299E86AF00C6CFB5 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				B94AF62A299E86DF00C6CFB5 /* RealmService.swift */,
+			);
+			name = BusinessLogic;
+			sourceTree = "<group>";
+		};
 		B986E882299D54080050A8F7 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B94AF629299E86AF00C6CFB5 /* BusinessLogic */,
+				B986E887299E6A6C0050A8F7 /* Entity */,
 				B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */,
 				B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */,
 				B986E883299D541A0050A8F7 /* Flows */,
@@ -141,6 +159,14 @@
 				B9DA9A25299B83F900A41C31 /* Assets.xcassets */,
 			);
 			name = Resourses;
+			sourceTree = "<group>";
+		};
+		B986E887299E6A6C0050A8F7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B94AF622299E703C00C6CFB5 /* Coordinate.swift */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 		B9DA9A10299B83F400A41C31 = {
@@ -225,6 +251,10 @@
 			dependencies = (
 			);
 			name = GoogleMapsTracker;
+			packageProductDependencies = (
+				B94AF625299E747E00C6CFB5 /* Realm */,
+				B94AF627299E747E00C6CFB5 /* RealmSwift */,
+			);
 			productName = GoogleMapsTracker;
 			productReference = B9DA9A19299B83F400A41C31 /* GoogleMapsTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -300,6 +330,9 @@
 				Base,
 			);
 			mainGroup = B9DA9A10299B83F400A41C31;
+			packageReferences = (
+				B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = B9DA9A1A299B83F400A41C31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -449,6 +482,8 @@
 				B9DA9A21299B83F400A41C31 /* ViewController.swift in Sources */,
 				B9DA9A1D299B83F400A41C31 /* AppDelegate.swift in Sources */,
 				B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */,
+				B94AF623299E703C00C6CFB5 /* Coordinate.swift in Sources */,
+				B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +664,8 @@
 				DEVELOPMENT_TEAM = HSKY5AD59J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsTracker/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "to show maps";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to route";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -658,6 +695,8 @@
 				DEVELOPMENT_TEAM = HSKY5AD59J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsTracker/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "to show maps";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to route";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -796,6 +835,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B94AF625299E747E00C6CFB5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B94AF627299E747E00C6CFB5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9DA9A11299B83F400A41C31 /* Project object */;
 }
