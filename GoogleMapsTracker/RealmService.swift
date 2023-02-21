@@ -29,7 +29,6 @@ class RealmService {
         return realm
     }
     
-    
     func putCoordinate(coordinates: [CLLocationCoordinate2D]){
 
         do {
@@ -59,8 +58,43 @@ class RealmService {
     }
         
     func removeCoordinate(){
-        try! realm.write {
-            realm.deleteAll()
+        
+        do {
+            try realm.write {
+                realm.delete(realm.objects(Coordinate.self))
+            }
+        } catch {
+            print(error)
         }
+    }
+    
+    func register(user: User) -> User {
+            
+        guard let userData = realm.objects(User.self).filter("login == '\(user.login)'").first else {
+            do {
+                try realm.write{
+                    realm.add(user)
+                }
+            } catch {
+                print(error)
+            }
+            return user
+        }
+        do {
+            try realm.write{
+                realm.add(user, update: .modified)
+            }
+        } catch {
+            print(error)
+        }
+        return userData
+    }
+        
+    func login(user: User) -> Bool{
+            
+        guard let _ = realm.objects(User.self).filter("login == '\(user.login)' AND password == '\(user.password)'").first else {
+            return false
+        }
+        return true
     }
 }
