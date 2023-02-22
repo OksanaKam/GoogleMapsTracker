@@ -21,11 +21,16 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextFields()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    func setupTextFields() {
+        login.autocorrectionType = .no
+        password.isSecureTextEntry = true
     }
     
     @IBAction func enter(_ sender: Any) {

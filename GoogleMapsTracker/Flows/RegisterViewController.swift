@@ -18,8 +18,8 @@ class RegisterViewController: UIViewController {
     }
     
     func setupTextFields() {
-        
-            password.isSecureTextEntry = true
+        login.autocorrectionType = .no
+        password.isSecureTextEntry = true
     }
     
     @IBAction func register(_ sender: Any) {

@@ -20,6 +20,7 @@
 		B94AF626299E747E00C6CFB5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B94AF625299E747E00C6CFB5 /* Realm */; };
 		B94AF628299E747E00C6CFB5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B94AF627299E747E00C6CFB5 /* RealmSwift */; };
 		B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AF62A299E86DF00C6CFB5 /* RealmService.swift */; };
+		B9C2F78B29A60A5F0007D050 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2F78A29A60A5F0007D050 /* BlurView.swift */; };
 		B9DA9A1D299B83F400A41C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */; };
 		B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */; };
 		B9DA9A21299B83F400A41C31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A20299B83F400A41C31 /* MapViewController.swift */; };
@@ -67,6 +68,7 @@
 		B90DE36F29A52DF10095E9F2 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		B94AF622299E703C00C6CFB5 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		B94AF62A299E86DF00C6CFB5 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		B9C2F78A29A60A5F0007D050 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B9DA9A19299B83F400A41C31 /* GoogleMapsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,10 +178,10 @@
 		B986E882299D54080050A8F7 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				B94AF629299E86AF00C6CFB5 /* BusinessLogic */,
-				B986E887299E6A6C0050A8F7 /* Entity */,
 				B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */,
 				B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */,
+				B94AF629299E86AF00C6CFB5 /* BusinessLogic */,
+				B986E887299E6A6C0050A8F7 /* Entity */,
 				B986E883299D541A0050A8F7 /* Flows */,
 			);
 			name = App;
@@ -188,6 +190,7 @@
 		B986E883299D541A0050A8F7 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				B9C2F78929A60A2C0007D050 /* View */,
 				B986E884299D543B0050A8F7 /* ViewControllers */,
 				B90DE36C29A526AC0095E9F2 /* Helper */,
 				B90DE36B29A5268D0095E9F2 /* Router */,
@@ -228,6 +231,14 @@
 				B90DE35729A517B10095E9F2 /* User.swift */,
 			);
 			name = Entity;
+			sourceTree = "<group>";
+		};
+		B9C2F78929A60A2C0007D050 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9C2F78A29A60A5F0007D050 /* BlurView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		B9DA9A10299B83F400A41C31 = {
@@ -549,6 +560,7 @@
 				B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */,
 				B90DE36E29A526DE0095E9F2 /* StoryboardHelper.swift in Sources */,
 				B94AF623299E703C00C6CFB5 /* Coordinate.swift in Sources */,
+				B9C2F78B29A60A5F0007D050 /* BlurView.swift in Sources */,
 				B90DE35D29A51FC70095E9F2 /* MainViewController.swift in Sources */,
 				B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */,
 				B90DE35829A517B10095E9F2 /* User.swift in Sources */,
