@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey("key")
+        GMSServices.provideAPIKey("AIzaSyDxaIgAWMO_k5tusCBr2LJQAq5IRN6praY")
         
         let controller: UIViewController
         if UserDefaults.standard.bool(forKey: "isLogin") {

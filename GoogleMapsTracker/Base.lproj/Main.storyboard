@@ -91,24 +91,6 @@
                                     <action selector="loadPreviousTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="964-dq-dZi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nN-gJ-DzI">
-                                <rect key="frame" x="323" y="678" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Vpi-Qi-DTT"/>
-                                    <constraint firstAttribute="height" constant="50" id="xJi-gx-Klp"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="flag.fill" catalog="system" title="Button" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                    </backgroundConfiguration>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="didTapTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pmu-7M-mTg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn3-AJ-QcA">
                                 <rect key="frame" x="323" y="748" width="50" height="50"/>
                                 <constraints>
@@ -132,11 +114,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QVV-xD-mka" secondAttribute="bottom" constant="20" id="06m-yY-k0K"/>
-                            <constraint firstItem="kn3-AJ-QcA" firstAttribute="top" secondItem="1nN-gJ-DzI" secondAttribute="bottom" constant="20" id="8Ag-GK-Ygf"/>
                             <constraint firstItem="gqZ-Vj-ldP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AGW-bI-lkD"/>
                             <constraint firstItem="kn3-AJ-QcA" firstAttribute="baseline" secondItem="QVV-xD-mka" secondAttribute="baseline" id="EEa-gq-TUs"/>
                             <constraint firstItem="N6W-5Q-I5L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GJV-AI-iuo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1nN-gJ-DzI" secondAttribute="trailing" constant="20" id="GOM-jU-1HI"/>
                             <constraint firstItem="N6W-5Q-I5L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GZA-U7-rKW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N6W-5Q-I5L" secondAttribute="bottom" constant="2" id="HfG-HC-3eu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kn3-AJ-QcA" secondAttribute="trailing" constant="20" id="KF2-ZI-KkW"/>
@@ -154,7 +134,6 @@
                         <outlet property="mapView" destination="N6W-5Q-I5L" id="0KI-mo-ggR"/>
                         <outlet property="startTrackButton" destination="gqZ-Vj-ldP" id="DlQ-RG-z17"/>
                         <outlet property="stopTrackButton" destination="Fg9-vq-8TY" id="63R-H3-d9l"/>
-                        <outlet property="trackButton" destination="1nN-gJ-DzI" id="7dM-Vy-t96"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -216,6 +195,7 @@
                     <navigationItem key="navigationItem" id="Lzy-3Q-D3F"/>
                     <connections>
                         <outlet property="login" destination="hoe-Ye-lSL" id="7J8-Lm-462"/>
+                        <outlet property="loginButton" destination="scd-fj-Zcv" id="jHm-LJ-iDb"/>
                         <outlet property="password" destination="uVX-ec-MBk" id="bG7-Hk-6Ay"/>
                         <outlet property="router" destination="cY8-Sl-Qlf" id="uSs-oY-Bd3"/>
                     </connections>
@@ -250,7 +230,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyF-JI-PSJ">
                                 <rect key="frame" x="100" y="477" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Зарегистрироваться"/>
                                 <connections>
                                     <action selector="register:" destination="VGW-cy-D3K" eventType="touchUpInside" id="7r6-Ap-IRO"/>
                                 </connections>
@@ -273,6 +253,7 @@
                     <connections>
                         <outlet property="login" destination="ChM-P6-zKL" id="s8d-51-W4a"/>
                         <outlet property="password" destination="tqi-KQ-lC8" id="4Et-rh-cKV"/>
+                        <outlet property="registerButton" destination="FyF-JI-PSJ" id="JL7-64-gNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dN-TS-43v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -282,7 +263,6 @@
     </scenes>
     <resources>
         <image name="figure.walk.circle" catalog="system" width="128" height="123"/>
-        <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="stop.circle.fill" catalog="system" width="128" height="123"/>

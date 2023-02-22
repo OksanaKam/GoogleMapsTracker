@@ -6,15 +6,38 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet var registerButton: UIButton!
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
+        setupObserver()
+    }
+    
+    func setupObserver(){
+        Observable.combineLatest(login.rx.text.asObservable().unwrap(),
+                                 password.rx.text.asObservable().unwrap())
+            .map { (userName, password) in
+                userName.count >= AuthConstatns.minLoginLenght && password.count >= AuthConstatns.minPasswordLength
+            }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.activeRegisterButton(isValid: isValid)
+            })
+            .disposed(by:disposeBag)
+    }
+        
+    func activeRegisterButton(isValid: Bool){
+        registerButton.isEnabled = isValid
+        registerButton.backgroundColor = isValid ? UIColor.systemGreen : UIColor.systemGray
     }
     
     func setupTextFields() {
