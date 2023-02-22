@@ -9,9 +9,21 @@
 /* Begin PBXBuildFile section */
 		45E8212CC39FA4502074C620 /* Pods_GoogleMapsTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABE932157F51645F14ACC20 /* Pods_GoogleMapsTrackerTests.framework */; };
 		82CD7ECAA26254929915CF06 /* Pods_GoogleMapsTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089258927828CD48FDC85668 /* Pods_GoogleMapsTracker.framework */; };
+		B90DE35629A50CEE0095E9F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35529A50CEE0095E9F2 /* LoginViewController.swift */; };
+		B90DE35829A517B10095E9F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35729A517B10095E9F2 /* User.swift */; };
+		B90DE35A29A518870095E9F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35929A518870095E9F2 /* RegisterViewController.swift */; };
+		B90DE35D29A51FC70095E9F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35C29A51FC70095E9F2 /* MainViewController.swift */; };
+		B90DE36029A523260095E9F2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35F29A523260095E9F2 /* Router.swift */; };
+		B90DE36E29A526DE0095E9F2 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE36D29A526DE0095E9F2 /* StoryboardHelper.swift */; };
+		B90DE37029A52DF10095E9F2 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE36F29A52DF10095E9F2 /* UIWindow.swift */; };
+		B94AF623299E703C00C6CFB5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AF622299E703C00C6CFB5 /* Coordinate.swift */; };
+		B94AF626299E747E00C6CFB5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B94AF625299E747E00C6CFB5 /* Realm */; };
+		B94AF628299E747E00C6CFB5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B94AF627299E747E00C6CFB5 /* RealmSwift */; };
+		B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AF62A299E86DF00C6CFB5 /* RealmService.swift */; };
+		B9C2F78B29A60A5F0007D050 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2F78A29A60A5F0007D050 /* BlurView.swift */; };
 		B9DA9A1D299B83F400A41C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */; };
 		B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */; };
-		B9DA9A21299B83F400A41C31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A20299B83F400A41C31 /* ViewController.swift */; };
+		B9DA9A21299B83F400A41C31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A20299B83F400A41C31 /* MapViewController.swift */; };
 		B9DA9A24299B83F400A41C31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DA9A22299B83F400A41C31 /* Main.storyboard */; };
 		B9DA9A26299B83F900A41C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DA9A25299B83F900A41C31 /* Assets.xcassets */; };
 		B9DA9A29299B83F900A41C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DA9A27299B83F900A41C31 /* LaunchScreen.storyboard */; };
@@ -47,10 +59,20 @@
 		4A4435A4E3FD86026C21ED95 /* Pods-GoogleMapsTracker-GoogleMapsTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTracker-GoogleMapsTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTracker-GoogleMapsTrackerUITests/Pods-GoogleMapsTracker-GoogleMapsTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		990EC9BCE01D14730F63FA62 /* Pods-GoogleMapsTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTrackerTests/Pods-GoogleMapsTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C9C892EE2FDF3768A4F152D /* Pods-GoogleMapsTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsTracker.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsTracker/Pods-GoogleMapsTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		B90DE35529A50CEE0095E9F2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B90DE35729A517B10095E9F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B90DE35929A518870095E9F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B90DE35C29A51FC70095E9F2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B90DE35F29A523260095E9F2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B90DE36D29A526DE0095E9F2 /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
+		B90DE36F29A52DF10095E9F2 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		B94AF622299E703C00C6CFB5 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		B94AF62A299E86DF00C6CFB5 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		B9C2F78A29A60A5F0007D050 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B9DA9A19299B83F400A41C31 /* GoogleMapsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B9DA9A20299B83F400A41C31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9DA9A20299B83F400A41C31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9DA9A23299B83F400A41C31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9DA9A25299B83F900A41C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DA9A28299B83F900A41C31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94AF628299E747E00C6CFB5 /* RealmSwift in Frameworks */,
+				B94AF626299E747E00C6CFB5 /* Realm in Frameworks */,
 				82CD7ECAA26254929915CF06 /* Pods_GoogleMapsTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,11 +125,63 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B90DE35329A50CB40095E9F2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B9DA9A20299B83F400A41C31 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B90DE35429A50CBF0095E9F2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B90DE35529A50CEE0095E9F2 /* LoginViewController.swift */,
+				B90DE35929A518870095E9F2 /* RegisterViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		B90DE35B29A51FB00095E9F2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B90DE35C29A51FC70095E9F2 /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		B90DE36B29A5268D0095E9F2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B90DE35F29A523260095E9F2 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B90DE36C29A526AC0095E9F2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B90DE36D29A526DE0095E9F2 /* StoryboardHelper.swift */,
+				B90DE36F29A52DF10095E9F2 /* UIWindow.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		B94AF629299E86AF00C6CFB5 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				B94AF62A299E86DF00C6CFB5 /* RealmService.swift */,
+			);
+			name = BusinessLogic;
+			sourceTree = "<group>";
+		};
 		B986E882299D54080050A8F7 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */,
 				B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */,
+				B94AF629299E86AF00C6CFB5 /* BusinessLogic */,
+				B986E887299E6A6C0050A8F7 /* Entity */,
 				B986E883299D541A0050A8F7 /* Flows */,
 			);
 			name = App;
@@ -114,7 +190,10 @@
 		B986E883299D541A0050A8F7 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				B9C2F78929A60A2C0007D050 /* View */,
 				B986E884299D543B0050A8F7 /* ViewControllers */,
+				B90DE36C29A526AC0095E9F2 /* Helper */,
+				B90DE36B29A5268D0095E9F2 /* Router */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -122,7 +201,9 @@
 		B986E884299D543B0050A8F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B9DA9A20299B83F400A41C31 /* ViewController.swift */,
+				B90DE35B29A51FB00095E9F2 /* Main */,
+				B90DE35429A50CBF0095E9F2 /* User */,
+				B90DE35329A50CB40095E9F2 /* Map */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -141,6 +222,23 @@
 				B9DA9A25299B83F900A41C31 /* Assets.xcassets */,
 			);
 			name = Resourses;
+			sourceTree = "<group>";
+		};
+		B986E887299E6A6C0050A8F7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B94AF622299E703C00C6CFB5 /* Coordinate.swift */,
+				B90DE35729A517B10095E9F2 /* User.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		B9C2F78929A60A2C0007D050 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9C2F78A29A60A5F0007D050 /* BlurView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		B9DA9A10299B83F400A41C31 = {
@@ -225,6 +323,10 @@
 			dependencies = (
 			);
 			name = GoogleMapsTracker;
+			packageProductDependencies = (
+				B94AF625299E747E00C6CFB5 /* Realm */,
+				B94AF627299E747E00C6CFB5 /* RealmSwift */,
+			);
 			productName = GoogleMapsTracker;
 			productReference = B9DA9A19299B83F400A41C31 /* GoogleMapsTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -300,6 +402,9 @@
 				Base,
 			);
 			mainGroup = B9DA9A10299B83F400A41C31;
+			packageReferences = (
+				B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = B9DA9A1A299B83F400A41C31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -446,9 +551,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9DA9A21299B83F400A41C31 /* ViewController.swift in Sources */,
+				B9DA9A21299B83F400A41C31 /* MapViewController.swift in Sources */,
+				B90DE35629A50CEE0095E9F2 /* LoginViewController.swift in Sources */,
+				B90DE36029A523260095E9F2 /* Router.swift in Sources */,
+				B90DE37029A52DF10095E9F2 /* UIWindow.swift in Sources */,
 				B9DA9A1D299B83F400A41C31 /* AppDelegate.swift in Sources */,
+				B90DE35A29A518870095E9F2 /* RegisterViewController.swift in Sources */,
 				B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */,
+				B90DE36E29A526DE0095E9F2 /* StoryboardHelper.swift in Sources */,
+				B94AF623299E703C00C6CFB5 /* Coordinate.swift in Sources */,
+				B9C2F78B29A60A5F0007D050 /* BlurView.swift in Sources */,
+				B90DE35D29A51FC70095E9F2 /* MainViewController.swift in Sources */,
+				B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */,
+				B90DE35829A517B10095E9F2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +744,8 @@
 				DEVELOPMENT_TEAM = HSKY5AD59J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsTracker/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "to show maps";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to route";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -658,6 +775,8 @@
 				DEVELOPMENT_TEAM = HSKY5AD59J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsTracker/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "to show maps";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to route";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -796,6 +915,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B94AF625299E747E00C6CFB5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B94AF627299E747E00C6CFB5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B94AF624299E747E00C6CFB5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9DA9A11299B83F400A41C31 /* Project object */;
 }
