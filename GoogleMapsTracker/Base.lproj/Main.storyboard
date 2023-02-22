@@ -216,6 +216,7 @@
                     <navigationItem key="navigationItem" id="Lzy-3Q-D3F"/>
                     <connections>
                         <outlet property="login" destination="hoe-Ye-lSL" id="7J8-Lm-462"/>
+                        <outlet property="loginButton" destination="scd-fj-Zcv" id="ZTm-gE-W0g"/>
                         <outlet property="password" destination="uVX-ec-MBk" id="bG7-Hk-6Ay"/>
                         <outlet property="router" destination="cY8-Sl-Qlf" id="uSs-oY-Bd3"/>
                     </connections>
@@ -273,6 +274,7 @@
                     <connections>
                         <outlet property="login" destination="ChM-P6-zKL" id="s8d-51-W4a"/>
                         <outlet property="password" destination="tqi-KQ-lC8" id="4Et-rh-cKV"/>
+                        <outlet property="registerButton" destination="FyF-JI-PSJ" id="rSH-wr-8ad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dN-TS-43v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

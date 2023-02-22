@@ -15,4 +15,6 @@ target 'GoogleMapsTracker' do
     # Pods for testing
   end
 pod 'GoogleMaps', '7.3.0'
+pod 'RxSwift'
+pod 'RxCocoa'
 end
