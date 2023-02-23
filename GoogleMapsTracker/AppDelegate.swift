@@ -7,17 +7,78 @@
 
 import UIKit
 import GoogleMaps
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey("AIzaSyCl8ZfJDmvyoss-GOielo8Q2LMjbKNE3ZE")
+        GMSServices.provideAPIKey("key")
+        
+        let controller: UIViewController
+        if UserDefaults.standard.bool(forKey: "isLogin") {
+        controller = UIStoryboard(name: "Main", bundle: nil) .instantiateViewController(MapViewController.self)
+        } else {
+        controller = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(LoginViewController.self)
+        }
+        window = UIWindow()
+        window?.rootViewController = UINavigationController(rootViewController: controller)
+        window?.makeKeyAndVisible()
+        
+        let center = UNUserNotificationCenter.current()
+        registerPermission(center: center)
         
         return true
+    }
+    
+    private func registerPermission(center: UNUserNotificationCenter) {
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
+            guard let self = self else { return }
+            guard granted else {
+                print("Разрешение не получено")
+                return
+                
+            }
+            let content = self.makeNotificationContent()
+            let trigger = self.makeIntervalNotificatioTrigger()
+            
+            self.sendNotificatioRequest(content: content, trigger: trigger)
+        }
+    }
+    
+    private func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Пора вставать"
+        content.subtitle = "7 утра"
+        content.body = "Пора вершить великие дела"
+        content.badge = 4
+        return content
+        
+    }
+    
+    func makeIntervalNotificatioTrigger() -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(
+            timeInterval: 30,
+            repeats: false
+        )
+    }
+    
+    private func sendNotificatioRequest( content: UNNotificationContent, trigger: UNNotificationTrigger) {
+        
+        let request = UNNotificationRequest( identifier: "alaram",
+                                             content: content,
+                                             trigger: trigger
+        )
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle
