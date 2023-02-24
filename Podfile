@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '12.0'
+platform :ios, '13.0'
 
 target 'GoogleMapsTracker' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -14,5 +14,7 @@ target 'GoogleMapsTracker' do
   target 'GoogleMapsTrackerUITests' do
     # Pods for testing
   end
-pod 'GoogleMaps'
+pod 'GoogleMaps', '7.3.0'
+pod 'RxSwift'
+pod 'RxCocoa'
 end

@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Для селфи</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>For example</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Для примера</string>
+	<string>For example</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
