@@ -20,23 +20,29 @@ class MapViewController: UIViewController {
     @IBOutlet var stopTrackButton: UIButton!
     @IBOutlet var loadPreviousTrackButton: UIButton!
     
-    var marker: GMSMarker?
-    var coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
-    var geoCoder: CLGeocoder?
+    private var marker: GMSMarker?
+    private var coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
+    private var geoCoder: CLGeocoder?
     private let locationManager = LocationManager()
-    var route: GMSPolyline?
-    var routePath = GMSMutablePath()
+    private var route: GMSPolyline?
+    private var routePath = GMSMutablePath()
     
-    var routeCoordinate = [CLLocationCoordinate2D]()
-    var isUpdateLocation = false
+    private var routeCoordinate = [CLLocationCoordinate2D]()
+    private var isUpdateLocation = false
     
     private let disposeBag = DisposeBag()
+    
+    private let imageService = ImageService()
+    private var imagePickerView: UIImageView?
+    private var userPhoto: UIImage?
+    private var selfieView:UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         configureMap()
         setupLocationManager()
+        loadPhoto()
     }
     
     private func configureMap() {
@@ -102,10 +108,26 @@ class MapViewController: UIViewController {
             viewLastPath()
         }
     }
-   
+    
+    @IBAction func takePicture(_ sender: Any) {
+       viewPickerController()
+    }
+    
     private func addMarker(coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker(position: coordinate)
         marker.map = mapView
+    }
+    
+    private func addPhotoMarker(location: CLLocation) {
+        self.marker?.map = nil
+        self.marker = nil
+        if imagePickerView == nil {
+            setupImageView()
+        }
+        let marker = GMSMarker(position: location.coordinate)
+        marker.iconView = imagePickerView
+        marker.map = mapView
+        self.marker = marker
     }
     
     private func removeMarker() {
@@ -132,7 +154,6 @@ class MapViewController: UIViewController {
     }
         
     private func setupRoute(){
-            
         route = GMSPolyline(path: routePath)
         route?.map = mapView
     }
@@ -142,6 +163,7 @@ class MapViewController: UIViewController {
         mapView.animate(to: position)
         routePath.add(location.coordinate)
         route?.path = routePath
+        addPhotoMarker(location: location)
     }
         
     private func savePath(){
@@ -169,6 +191,74 @@ class MapViewController: UIViewController {
         let update = GMSCameraUpdate.fit(bounds)
         mapView.animate(with: update)
     }
+    
+    private func viewPickerController(){
+            
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .camera
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true)
+    }
+    
+    private func extractImage(from info: [UIImagePickerController.InfoKey: Any]) -> UIImage? {
+            
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            return image
+        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            return image
+        } else {
+            return nil
+        }
+    }
+    
+    private func setupImageView(){
+            
+        if let image = userPhoto {
+            let rect = CGRect(x: 0, y: 0, width: 30, height: 30)
+            let view = UIImageView(frame: rect)
+            view.image = image
+            view.layer.cornerRadius = 15
+            view.layer.borderColor = UIColor.white.cgColor
+            view.layer.borderWidth = 1
+            view.layer.masksToBounds = true
+            imagePickerView = view
+        }
+    }
+    
+    private func loadPhoto(){
+            
+        if let image = imageService.getImage() {
+            userPhoto = image
+            viewPhoto()
+        }
+    }
+        
+    private func savePhoto(_ image: UIImage?){
+            
+        if image != nil {
+            imageService.saveImage(image: image!)
+        }
+    }
+    
+    private func viewPhoto(){
+        
+        guard let image = userPhoto else { return }
+        if selfieView == nil {
+            let frame = CGRect(x: UIScreen.main.bounds.width - 110, y: 120, width: 80, height: 80)
+            let imageView = UIImageView(frame: frame)
+            imageView.image = image
+            imageView.layer.cornerRadius = 40
+            imageView.layer.borderColor = UIColor.white.cgColor
+            imageView.layer.borderWidth = 3
+            imageView.layer.masksToBounds = true
+            selfieView = imageView
+            view.addSubview(selfieView!)
+        } else {
+            selfieView!.image = image
+        }
+    }
 }
 
 extension MapViewController: GMSMapViewDelegate {
@@ -189,3 +279,25 @@ extension MapViewController: GMSMapViewDelegate {
         }
     }
 }
+
+extension MapViewController: UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = extractImage(from: info)
+        savePhoto(image)
+        imagePickerView = nil
+        userPhoto = image
+        viewPhoto()
+        picker.dismiss(animated: true)
+    }
+}
+
+extension MapViewController: UIImagePickerControllerDelegate {
+    
+}
+

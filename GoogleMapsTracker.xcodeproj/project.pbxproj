@@ -12,7 +12,6 @@
 		B90DE35629A50CEE0095E9F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35529A50CEE0095E9F2 /* LoginViewController.swift */; };
 		B90DE35829A517B10095E9F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35729A517B10095E9F2 /* User.swift */; };
 		B90DE35A29A518870095E9F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35929A518870095E9F2 /* RegisterViewController.swift */; };
-		B90DE35D29A51FC70095E9F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35C29A51FC70095E9F2 /* MainViewController.swift */; };
 		B90DE36029A523260095E9F2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE35F29A523260095E9F2 /* Router.swift */; };
 		B90DE36E29A526DE0095E9F2 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE36D29A526DE0095E9F2 /* StoryboardHelper.swift */; };
 		B90DE37029A52DF10095E9F2 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE36F29A52DF10095E9F2 /* UIWindow.swift */; };
@@ -24,6 +23,7 @@
 		B9C2F78D29A66BBB0007D050 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2F78C29A66BBB0007D050 /* Observable.swift */; };
 		B9C2F78F29A66C400007D050 /* AuthConstatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2F78E29A66C400007D050 /* AuthConstatns.swift */; };
 		B9C2F79129A66E0F0007D050 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2F79029A66E0F0007D050 /* LocationManager.swift */; };
+		B9D438F029A8A5010018331E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D438EF29A8A5010018331E /* ImageService.swift */; };
 		B9DA9A1D299B83F400A41C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */; };
 		B9DA9A1F299B83F400A41C31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */; };
 		B9DA9A21299B83F400A41C31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA9A20299B83F400A41C31 /* MapViewController.swift */; };
@@ -65,7 +65,6 @@
 		B90DE35529A50CEE0095E9F2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B90DE35729A517B10095E9F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B90DE35929A518870095E9F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		B90DE35C29A51FC70095E9F2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B90DE35F29A523260095E9F2 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B90DE36D29A526DE0095E9F2 /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		B90DE36F29A52DF10095E9F2 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		B9C2F78C29A66BBB0007D050 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B9C2F78E29A66C400007D050 /* AuthConstatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConstatns.swift; sourceTree = "<group>"; };
 		B9C2F79029A66E0F0007D050 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B9D438EF29A8A5010018331E /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		B9DA9A19299B83F400A41C31 /* GoogleMapsTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DA9A1C299B83F400A41C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DA9A1E299B83F400A41C31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,14 +148,6 @@
 			name = User;
 			sourceTree = "<group>";
 		};
-		B90DE35B29A51FB00095E9F2 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				B90DE35C29A51FC70095E9F2 /* MainViewController.swift */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
 		B90DE36B29A5268D0095E9F2 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +171,7 @@
 			children = (
 				B94AF62A299E86DF00C6CFB5 /* RealmService.swift */,
 				B9C2F79029A66E0F0007D050 /* LocationManager.swift */,
+				B9D438EF29A8A5010018331E /* ImageService.swift */,
 			);
 			name = BusinessLogic;
 			sourceTree = "<group>";
@@ -209,7 +202,6 @@
 		B986E884299D543B0050A8F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B90DE35B29A51FB00095E9F2 /* Main */,
 				B90DE35429A50CBF0095E9F2 /* User */,
 				B90DE35329A50CB40095E9F2 /* Map */,
 			);
@@ -609,7 +601,7 @@
 				B94AF623299E703C00C6CFB5 /* Coordinate.swift in Sources */,
 				B9C2F78B29A60A5F0007D050 /* BlurView.swift in Sources */,
 				B9C2F78D29A66BBB0007D050 /* Observable.swift in Sources */,
-				B90DE35D29A51FC70095E9F2 /* MainViewController.swift in Sources */,
+				B9D438F029A8A5010018331E /* ImageService.swift in Sources */,
 				B94AF62B299E86DF00C6CFB5 /* RealmService.swift in Sources */,
 				B90DE35829A517B10095E9F2 /* User.swift in Sources */,
 			);
